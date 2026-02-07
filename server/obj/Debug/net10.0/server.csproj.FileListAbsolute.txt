@@ -125,3 +125,11 @@
 /Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Pipelines.Sockets.Unofficial.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/StackExchange.Redis.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/StateleSSE.AspNetCore.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/obj/Debug/net10.0/server.sourcelink.json
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/System.IO.Hashing.dll

@@ -12,6 +12,9 @@
           "Microsoft.EntityFrameworkCore": "10.0.2",
           "Microsoft.EntityFrameworkCore.Design": "10.0.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.0",
+          "StackExchange.Redis": "2.10.14",
+          "StateleSSE.AspNetCore": "3.1.0",
+          "Swashbuckle.AspNetCore": "10.1.2",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
         },
         "runtime": {
@@ -28,7 +31,7 @@
       },
       "Microsoft.AspNetCore.OpenApi/10.0.2": {
         "dependencies": {
-          "Microsoft.OpenApi": "2.0.0"
+          "Microsoft.OpenApi": "2.4.1"
         },
         "runtime": {
           "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
@@ -415,11 +418,11 @@
           }
         }
       },
-      "Microsoft.OpenApi/2.0.0": {
+      "Microsoft.OpenApi/2.4.1": {
         "runtime": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
           }
         }
       },
@@ -468,6 +471,74 @@
           "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.0.0"
+          }
+        }
+      },
+      "Pipelines.Sockets.Unofficial/2.2.8": {
+        "runtime": {
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "2.2.8.1080"
+          }
+        }
+      },
+      "StackExchange.Redis/2.10.14": {
+        "dependencies": {
+          "Pipelines.Sockets.Unofficial": "2.2.8",
+          "System.IO.Hashing": "9.0.10"
+        },
+        "runtime": {
+          "lib/net8.0/StackExchange.Redis.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.10.14.64328"
+          }
+        }
+      },
+      "StateleSSE.AspNetCore/3.1.0": {
+        "dependencies": {
+          "StackExchange.Redis": "2.10.14"
+        },
+        "runtime": {
+          "lib/net10.0/StateleSSE.AspNetCore.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore/10.1.2": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "10.1.2",
+          "Swashbuckle.AspNetCore.SwaggerGen": "10.1.2",
+          "Swashbuckle.AspNetCore.SwaggerUI": "10.1.2"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/10.1.2": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.4.1"
+        },
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "10.1.2.0",
+            "fileVersion": "10.1.2.2188"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/10.1.2": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "10.1.2"
+        },
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "10.1.2.0",
+            "fileVersion": "10.1.2.2188"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/10.1.2": {
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "10.1.2.0",
+            "fileVersion": "10.1.2.2188"
           }
         }
       },
@@ -548,6 +619,14 @@
           "lib/net10.0/System.IdentityModel.Tokens.Jwt.dll": {
             "assemblyVersion": "8.15.0.0",
             "fileVersion": "8.15.0.61118"
+          }
+        }
+      },
+      "System.IO.Hashing/9.0.10": {
+        "runtime": {
+          "lib/net9.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "9.0.0.10",
+            "fileVersion": "9.0.1025.47515"
           }
         }
       }
@@ -678,12 +757,12 @@
       "path": "microsoft.identitymodel.tokens/8.15.0",
       "hashPath": "microsoft.identitymodel.tokens.8.15.0.nupkg.sha512"
     },
-    "Microsoft.OpenApi/2.0.0": {
+    "Microsoft.OpenApi/2.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
-      "path": "microsoft.openapi/2.0.0",
-      "hashPath": "microsoft.openapi.2.0.0.nupkg.sha512"
+      "sha512": "sha512-u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
+      "path": "microsoft.openapi/2.4.1",
+      "hashPath": "microsoft.openapi.2.4.1.nupkg.sha512"
     },
     "Microsoft.VisualStudio.SolutionPersistence/1.0.52": {
       "type": "package",
@@ -719,6 +798,55 @@
       "sha512": "sha512-E2+uSWxSB8LdsUVwPaqRWOcGOP92biry2JEwc0KJMdLJF+aZdczeIdEXVwEyv4nSVMQJH0o8tLhyAMiR6VF0lw==",
       "path": "npgsql.entityframeworkcore.postgresql/10.0.0",
       "hashPath": "npgsql.entityframeworkcore.postgresql.10.0.0.nupkg.sha512"
+    },
+    "Pipelines.Sockets.Unofficial/2.2.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zG2FApP5zxSx6OcdJQLbZDk2AVlN2BNQD6MorwIfV6gVj0RRxWPEp2LXAxqDGZqeNV1Zp0BNPcNaey/GXmTdvQ==",
+      "path": "pipelines.sockets.unofficial/2.2.8",
+      "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
+    },
+    "StackExchange.Redis/2.10.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7SaubYT00NJrMg2KFK7N1ovK6XGz7RMdwB49+AOKDYkL5W2eMWxSNolrX/GF7hpwFfy/Dj2+Cj29wi4VZSW/DA==",
+      "path": "stackexchange.redis/2.10.14",
+      "hashPath": "stackexchange.redis.2.10.14.nupkg.sha512"
+    },
+    "StateleSSE.AspNetCore/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ngLW7nU79XeyvKksHKV0g93OcGHmtklNoJr3eNLN82ddGRwDdkgo0mCFDGp2cS3HF7+IQ1uG38qkx+tieHjmxA==",
+      "path": "statelesse.aspnetcore/3.1.0",
+      "hashPath": "statelesse.aspnetcore.3.1.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/10.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-txDJi7w/didFl/kIlTaA+FfzaJvZaXXZMejfxhJRK/CZdG8PrJcW1xquUuyLN0zNTpU5K0mm0U19B0/P5xiNOA==",
+      "path": "swashbuckle.aspnetcore/10.1.2",
+      "hashPath": "swashbuckle.aspnetcore.10.1.2.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/10.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CvIeWbEJ+pogj601pptQYzz3poZhS8/mk/vFozRQ74JckT3WWLGX1mFjNwNVdJOERf4Lk/clbFqfRG4WEvDGcw==",
+      "path": "swashbuckle.aspnetcore.swagger/10.1.2",
+      "hashPath": "swashbuckle.aspnetcore.swagger.10.1.2.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/10.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/gcOooF1cfmdvYU6wFiPB9On5CMUp2P/jrt2EFEoSG0p0xSALBdWoWy3eNHVmzXUlVHaGAg5PHFC6e8C+tVpWw==",
+      "path": "swashbuckle.aspnetcore.swaggergen/10.1.2",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.10.1.2.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/10.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Zzam+F/g3jpGvSLhqdtOoBe+GEABk+oi9LJxun1wrz52/254sSGWkz1P+U1dDifsXJWVdZusiRuDWLXkJW+7Eg==",
+      "path": "swashbuckle.aspnetcore.swaggerui/10.1.2",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.10.1.2.nupkg.sha512"
     },
     "System.CodeDom/6.0.0": {
       "type": "package",
@@ -775,6 +903,13 @@
       "sha512": "sha512-dpodi7ixz6hxK8YCBYAWzm0IA8JYXoKcz0hbCbNifo519//rjUI0fBD8rfNr+IGqq+2gm4oQoXwHk09LX5SqqQ==",
       "path": "system.identitymodel.tokens.jwt/8.15.0",
       "hashPath": "system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512"
+    },
+    "System.IO.Hashing/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9gv5z71xaWWmcGEs4bXdreIhKp2kYLK2fvPK5gQkgnWMYvZ8ieaxKofDjxL3scZiEYfi/yW2nJTiKV2awcWEdA==",
+      "path": "system.io.hashing/9.0.10",
+      "hashPath": "system.io.hashing.9.0.10.nupkg.sha512"
     }
   }
 }

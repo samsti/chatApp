@@ -1,12 +1,12 @@
-import './App.css'
+import ShellLayout from "./components/ShellLayout";
+import AuthSection from "./components/AuthPanel";
+import ChatSection from "./components/ChatSection";
 
-function App() {
-
-  return (
-    <>
-
-    </>
-  )
+export default function App() {
+    return (
+        <ShellLayout
+            top={<AuthSection apiBaseUrl="http://localhost:5000" />}
+            bottom={<ChatSection />}
+        />
+    );
 }
-
-export default App
