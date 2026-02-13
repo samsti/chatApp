@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export function useChatSse(apiBaseUrl: string) {
     const [connectionId, setConnectionId] = useState<string | null>(null);
@@ -18,25 +18,39 @@ export function useChatSse(apiBaseUrl: string) {
         };
     }, [apiBaseUrl]);
 
-    function onGroupMessage(
-        roomId: string,
-        handler: (data: any) => void
-    ) {
-        const eventName = `room:${roomId}`;
+    const onGroupMessage = useCallback(
+        (roomId: string, handler: (data: any) => void) => {
+            const listener = (e: MessageEvent) => {
+                handler(JSON.parse(e.data));
+            };
 
-        const listener = (e: MessageEvent) => {
-            handler(JSON.parse(e.data));
-        };
+            eventSourceRef.current?.addEventListener(roomId, listener);
 
-        eventSourceRef.current?.addEventListener(eventName, listener);
+            return () => {
+                eventSourceRef.current?.removeEventListener(roomId, listener);
+            };
+        },
+        []
+    );
 
-        return () => {
-            eventSourceRef.current?.removeEventListener(eventName, listener);
-        };
-    }
+    const onDirectMessage = useCallback(
+        (handler: (data: any) => void) => {
+            const listener = (e: MessageEvent) => {
+                handler(JSON.parse(e.data));
+            };
+
+            eventSourceRef.current?.addEventListener("message", listener);
+
+            return () => {
+                eventSourceRef.current?.removeEventListener("message", listener);
+            };
+        },
+        []
+    );
 
     return {
         connectionId,
         onGroupMessage,
+        onDirectMessage,
     };
 }

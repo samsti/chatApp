@@ -133,3 +133,6 @@
 /Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/System.IO.Hashing.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
+/Users/samuelstiksa/RiderProjects/chatApp/server/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

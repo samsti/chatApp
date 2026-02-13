@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useChatSse } from "./useChatSse";
+import { useChatSse } from "../services/useChatSse.ts";
 import {
     createRoom,
     joinRoom,
     sendMessage,
     pokeRoom,
-} from "./chatApi";
+} from "../services/chatApi.ts";
 
 type Room = { id: string; name: string };
 type ChatMessage = {

@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { jwtService } from "../services/JWTService";
+import {clearAuthToken, setAuthToken} from "../services/chatApi.ts";
 
 type Mode = "login" | "register";
 type AuthResponse = { token?: string };
@@ -11,8 +12,8 @@ export default function AuthPanel({ apiBaseUrl }: { apiBaseUrl: string }) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    const isLoggedIn = useMemo(() => !!jwtService.getToken(), []);
-    const loggedInUser = useMemo(() => jwtService.getUser(), []); // ✅
+    const [isLoggedIn, setIsLoggedIn] = useState(() => !!jwtService.getToken());
+    const [loggedInUser, setLoggedInUser] = useState(() => jwtService.getUser());
 
     async function submit(e: React.FormEvent) {
         e.preventDefault();
@@ -37,8 +38,10 @@ export default function AuthPanel({ apiBaseUrl }: { apiBaseUrl: string }) {
             if (!data.token) throw new Error("No token returned from server. Expected { token: string }");
 
             jwtService.setToken(data.token);
-            jwtService.setUser(username); // ✅ store who logged in
-            window.location.reload();
+            jwtService.setUser(username);
+            setAuthToken(data.token);
+            setIsLoggedIn(true);
+            setLoggedInUser(username);
         } catch (err: any) {
             setError(err?.message ?? "Something went wrong");
         } finally {
@@ -48,7 +51,9 @@ export default function AuthPanel({ apiBaseUrl }: { apiBaseUrl: string }) {
 
     function logout() {
         jwtService.clearToken();
-        window.location.reload();
+        clearAuthToken();
+        setIsLoggedIn(false);
+        setLoggedInUser(null);
     }
 
     return (

@@ -10,8 +10,7 @@ public class JwtService( IConfiguration configuration)
 
     public string GenerateToken(string userId)
     {
-        var secret = configuration.GetSection("Secret").Value ??
-                     throw new InvalidOperationException("JWT Secret not configured");
+        var secret = configuration["Jwt:Key"] ?? "DEV_ONLY_CHANGE_ME_32_CHARS_MINIMUM";
         return new JwtSecurityTokenHandler().WriteToken(new JwtSecurityToken(
             claims: [new Claim(ClaimTypes.NameIdentifier, userId)],
             expires: DateTime.UtcNow.AddHours(24),
